@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import Users from './Users';
+import Home from './componetns/home/Home';
+import Users from './componetns/users/Users';
 
 const App = () => (
   <div className="page">
@@ -18,7 +18,9 @@ const App = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/users" component={Users} />
+      <Route path="/users">
+        <Users />
+      </Route>
     </BrowserRouter>
   </div>
 );
