@@ -9,7 +9,6 @@ module.exports = (env, argv) => {
     entry: './src/index.jsx',
     output: {
       filename: 'bundle.js',
-      publicPath: '/',
     },
     module: {
       rules: [
@@ -47,10 +46,14 @@ module.exports = (env, argv) => {
   };
 
   if (isProduction) {
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  }
+
+  if (isProduction) {
     config.plugins.push(
       new MiniCssExtractPlugin({
         filename: '[name].css',
-      })
+      }),
     );
   }
 

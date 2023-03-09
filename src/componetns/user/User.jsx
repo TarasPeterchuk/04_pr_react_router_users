@@ -8,7 +8,7 @@ const User = () => {
   const { userId } = useParams();
 
   useEffect(() => {
-    fetchUser(userId).then((fetchedUserData) => setUserData(fetchedUserData));
+    fetchUser(userId).then(fetchedUserData => setUserData(fetchedUserData));
   }, [userId]);
 
   if (!userData) {
